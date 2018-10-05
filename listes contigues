@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct {
+	int T[100];
+	int longueur;
+} liste;
+void inserer(liste l, int k, int e){    //k c'est la position de l'insertion   et e c'est la valeur inserer//
+	int i;                                 //i c'est le compteur//
+	if((l.longueur<100) && (k>0) &&  (k<=l.longueur+1)){
+	  for(i=l.longueur; i<k; i--){
+		l.T[i+1]=l.T[i];
+	}
+	l.longueur=l.longueur+1;
+	l.T[k]=e;
+}	
+}//procedure pour inserer un nouveau element dans la position k de la liste//
+main(){
+	liste l;
+	int k,e,i,c;  // i c'est le compteur de la boucle for   c c'est la longueur de la liste// 
+	printf("donner la longueur de la liste");
+  scanf("%d",&l.longueur);
+  c=l.longueur;
+  for(i==0;i<c;i++){
+    	printf("donner les valeurs de la liste");
+    	scanf("%d",& l.T[i]);
+    	l.longueur=l.longueur+1;
+	} //remplir la liste//
+	printf("donner la position de l'insertion");
+	scanf("%d",& k);
+	printf("donner la valeur");
+	scanf("%d",& e);
+	inserer(l,k,e); 
+	for(i==0;i<l.longueur;i++){
+		printf("la liste  est  %d\n ",l.T[i]);
+	}	//afficher la liste//
+}
